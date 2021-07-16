@@ -1,0 +1,120 @@
+﻿<style>
+
+    html {
+        width: 100%;
+        height: 100%;
+    }
+
+    body {
+        padding: 30px;
+        background-color: #b1ade2;
+        background-image: linear-gradient(315deg, #b1ade2 0%, #7ddff8 74%);
+    }
+
+    .inner-div {
+        padding: 30px;
+        background-color: white;
+        margin: 0 auto;
+        border-radius: 30px;
+    }
+
+    .welcome {
+        padding: 5px;
+        font-family: Helvetica;
+        text-align: center;
+    }
+
+
+    .box1 {
+        box-sizing: content-box;
+        width: 30%;
+        text-align: center;
+    }
+
+    .box2 {
+        box-sizing: content-box;
+        width: 30%;
+        text-align: center;
+    }
+</style>
+
+<div class="inner-div">
+
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <div class="container">
+            <a class="navbar-brand" asp-area="" asp-controller="" asp-action="">TFG</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="PlayerDashboard">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Game" asp-action="LetsPlay">Play</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Rank">Rank</a>
+                    </li>
+
+
+                    <li class="nav-item offset-7">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Logoff">Log Out</a>
+                    </li>
+
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="welcome">
+        <h1><b>Let's Play!</b></h1>
+    </div>
+    <br />
+
+
+    <form asp-controller="Game"
+          asp-action="JoinSession">
+
+        <div class="box1 offset-sm-4">
+            <input type="submit" class="btn btn-success" value="Join Game Session" />
+            <br />
+        </div>
+        <br />
+
+    </form>
+
+
+    <form asp-controller="Game"
+          asp-action="PublicSession">
+
+        <div class="box2 offset-sm-4">
+            <input type="submit" class="btn btn-primary" value="Explore Public Game Sessions" />
+            <br />
+        </div>
+        <br />
+
+    </form>
+
+
+   
+
+
+    <br />
+
+
+
+
+
+
+</div>

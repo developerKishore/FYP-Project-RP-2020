@@ -1,0 +1,135 @@
+﻿@model PlayerLogin
+
+
+<style>
+    html {
+        width: 100%;
+        height: 100%;
+    }
+
+    body {
+        padding: 50px;
+        background: linear-gradient(45deg, rgba(66, 183, 245, 0.8) 0%, rgba(66, 245, 189, 0.4) 100%);
+    }
+
+
+
+    .inner-div {
+        padding: 30px;
+        background-color: white;
+        margin: 0 auto;
+        border-radius: 30px;
+        
+        
+    }
+
+    .btn.btn-primary {
+        border-radius: 30px;
+        width: 65%;
+        background-image: linear-gradient(to right, #77A1D3 0%, #79CBCA 51%, #77A1D3 100%);
+        background-position: right center;
+    }
+     .image {
+        width: 125px;
+        margin:initial;
+        display: flex;
+        justify-content:left;
+
+    }
+
+    .flex-container {
+        padding:20px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+  
+    
+        
+
+</style>
+
+
+
+    
+
+
+<div class="inner-div">
+
+    
+    
+
+    <form asp-controller="Account"
+          asp-action="Login"
+          method="post">
+        <h2 class="form-login">Log In</h2>
+        <div class="col-sm-5">
+
+            <div class="flex-container">
+                <img class="image"
+                     src="~/Images/Log In.svg" />
+                <br />
+
+            </div>
+
+            <div class="form-group row">
+                <label asp-for="UserName" class="control-label"> Username :</label>
+                <input asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group row">
+                <label asp-for="Password" class="control-label">Password :</label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+
+
+            @{
+
+                <div class="form-group row">
+                    <div class="form-check">
+                        <input asp-for="RememberMe" class="form-check-input" />
+                        <label asp-for="RememberMe" class="form-check-label">
+                            Remember Me
+                        </label>
+
+                    </div>
+                </div>
+            }
+
+
+            @if (ViewData["Message"] != null)
+            {
+                <div class="form-group row">
+                    <div class="alert alert-@ViewData["MsgType"]">
+                        <text>@ViewData["Message"]</text>
+                    </div>
+                </div>
+            }
+
+            <div class="form-group row">
+                <input type="submit" class="btn btn-primary" value="Login" />
+            </div>
+
+            <div>
+                <a href="">Forget Password?</a>
+            </div>
+
+            <div>
+                <br />
+                Don't have an account? <a href="/account/register">Create new account.</a>
+                <br />
+                <a href="/">Go Back</a>
+               
+                
+            </div>
+
+        </div>
+
+    </form>
+
+
+</div>
+    

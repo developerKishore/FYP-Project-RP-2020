@@ -1,0 +1,243 @@
+﻿@using FYP_Project.Models
+
+
+<style>
+    html {
+        width: 100%;
+        height: 100%;
+    }
+
+    body {
+        padding: 30px;
+        background-color: #7ee8fa;
+        background-image: linear-gradient(315deg, #7ee8fa 0%, rgb(97, 194, 86) 74%);
+    }
+
+    .inner-div {
+        padding: 30px;
+        background-color: white;
+        margin: 0 auto;
+        border-radius: 30px;
+    }
+
+    .generate {
+        padding: 5px;
+        font-family: sans-serif;
+        text-align: center;
+    }
+
+    .box1 {
+        box-sizing: content-box;
+        width: 30%;
+        text-align: center;
+    }
+
+    .box2 {
+        box-sizing: content-box;
+        width: 30%;
+        text-align: center;
+    }
+
+    .box3 {
+        box-sizing: content-box;
+        width: 30%;
+        text-align: center;
+    }
+</style>
+
+<div class="inner-div">
+
+
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <div class="container">
+            <a class="navbar-brand" asp-area="" asp-controller="" asp-action="PlayerDashboard">TFG</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="PlayerDashboard">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" target="_blank" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="GenerateView">Generate</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Game" asp-action="ManageSession">Session</a>
+                    </li>
+
+                    <li class="nav-item offset-sm-7">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Logoff">Log Out</a>
+                    </li>
+
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="generate">
+        <h1 class="text-center"><b>Reports:</b></h1>
+        <br />
+    </div>
+
+    <canvas id="Chart_2" width="50" height="50"></canvas>
+    <br />
+    <br />
+    <canvas id="Chart_3" width="50" height="50"></canvas>
+    <br />
+    <br />
+    <canvas id="Chart_4" width="50" height="50"></canvas>
+    <br />
+    <br />
+    <canvas id="Chart_1" width="50" height="50"></canvas>
+
+
+
+
+    <script>
+
+        var ctx = $('#Chart_2')
+        var myColor = ['#00CED1']
+        var Chart2 = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['April', 'May', 'June', 'July', 'August'],
+                datasets: [{
+                    label: 'No. of Players',
+                    fill: false,
+                    data: [0, 0, 6, 5, @TempData["Total"]],
+                    backgroundColor: ['#FF8C00', '#FF8C00', '#FF8C00', '#FF8C00', '#FF8C00'],
+                    borderColor: myColor
+
+                }]
+            },
+
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            },
+
+            options: {
+                  title: {
+                       display: true,
+                       text: 'Players Overtime',
+                       fontSize: 23
+                  }
+            }
+        })
+
+
+
+
+
+        var ctx = $('#Chart_3')
+        var myColor = ['#13a300']
+        var Chart3 = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['April', 'May', 'June', 'July', 'August'],
+                datasets: [{
+                    label: 'Game Sessions',
+                    fill: false,
+                    data: [0, 0, 10, 5, @TempData["All"]],
+                    backgroundColor: ['#ff2ee7', '#ff2ee7', '#ff2ee7', '#ff2ee7', '#ff2ee7'],
+                    borderColor: myColor
+
+                }]
+            },
+
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            },
+
+              options: {
+                  title: {
+                       display: true,
+                       text: 'Game Sessions Overtime',
+                       fontSize: 23
+                  }
+              }
+        })
+
+
+
+        var ctx = $('#Chart_4')
+
+        var Chart_4 = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['April', 'May', 'June', 'July', 'August'],
+                datasets: [{
+                    label: 'Game Session Time in mins',
+                    data: [0, 0, 33, 25, 22],
+                    backgroundColor: [
+                        'rgba(255, 181, 102, 0.2)',
+                        'rgba(255, 219, 102, 0.2)',
+                        'rgba(0, 189, 126, 0.2)',
+                        'rgba(102, 117, 255, 0.2)',
+                        'rgba(255, 102, 145, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 181, 102, 1)',
+                        'rgba(255, 219, 102, 1)',
+                        'rgba(0, 189, 126, 1)',
+                        'rgba(102, 117, 255, 1)',
+                        'rgba(255, 102, 145, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+
+                    }]
+                }
+            },
+
+              options: {
+                  title: {
+                       display: true,
+                       text: 'Average Game Session Time in mins',
+                       fontSize: 23
+                  }
+              }
+        });
+
+
+    </script>
+
+
+    <br />
+    <br />
+
+
+
+
+
+
+
+</div>

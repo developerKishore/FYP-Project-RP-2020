@@ -1,0 +1,158 @@
+﻿@using FYP_Project.Models
+    
+
+<style>
+    html {
+        width: 100%;
+        height: 100%;
+    }
+
+    body {
+        padding: 30px;
+        background-color: #b1ade2;
+        background-image: linear-gradient(315deg, #b1ade2 0%, #7ddff8 74%);
+    }
+
+    .inner-div {
+        padding: 30px;
+        background-color: white;
+        margin: 0 auto;
+        border-radius: 30px;
+    }
+
+    .btn1{
+        box-sizing: content-box;
+        width: 30%;
+        text-align: center;
+        
+
+    }
+
+    .btn2{
+        box-sizing: content-box;
+        width: 30%;
+        text-align: center;
+ }
+
+    .btn3{
+        box-sizing: content-box;
+        width: 30%;
+        text-align: center;
+ }
+
+    
+
+   
+
+
+  
+</style>
+
+
+
+
+
+<div class="inner-div">
+
+
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <div class="container">
+            <a class="navbar-brand" asp-area="" asp-controller="Account" asp-action="PlayerDashboard">TFG</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="PlayerDashboard">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" target="_blank" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Game" asp-action="LetsPlay">Play</a>
+
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Rank">Rank</a>
+                    </li>
+
+
+                    <li class="nav-item offset-sm-7">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Logoff">Log Out</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </nav>
+
+
+
+
+    <div class="text-center">
+        <h1 class="display-4">Welcome to The Face Game!</h1>
+        <br />
+    </div>
+
+    <br />
+    <br />
+    <br />
+    <div class="buttons">
+
+
+        <form asp-controller="Game"
+              asp-action="JoinSession">
+
+            <div class="btn1 offset-sm-4">
+                <input type="submit" class="btn btn-success btn-lg" id="join" value="Join a Session" />
+            </div>
+
+        </form>
+
+
+
+        <br />
+        <br />
+        <br />
+
+        <form asp-controller="Game"
+              asp-action="PublicSession">
+
+            <div class="btn2 offset-sm-4">
+                <input type="submit" class="btn btn-primary btn-lg" id="explore" value="Explore Public Sessions" />
+            </div>
+
+
+        </form>
+
+        <br />
+        <br />
+        <br />
+
+        <form asp-controller="Account"
+              asp-action="ManageAccount2">
+
+            <div class="btn3 offset-sm-4">
+                <input type="submit" class="btn btn-outline-dark btn-lg" id="manage" value="Manage Account" />
+            </div>
+
+            <br />
+            <br />
+
+
+        </form>
+
+      
+
+
+
+    </div>
+
+
+
+
+</div>
