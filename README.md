@@ -1,5 +1,5 @@
 # FYP-Project-RP-2020
-This is a trash FYP Project that I did back in my final year at Republic Polytechnic (RP) in Sem1 2020. Some of the code maybe useful for you reference and my reference. Thank You for taking a look.
+This is my FYP Project that I did back in my final year at Republic Polytechnic (RP) in Sem1 2020. Some of the code maybe useful for your reference and my reference. Thank You for taking a look.
 
 Here is a screenshot for you.
 
